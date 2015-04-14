@@ -15,7 +15,6 @@ var port = 3000;
 var ip = "127.0.0.1";
 
 
-
 // We use node's http module to create a server.
 //
 // The function we pass to http.createServer will be used to handle all
@@ -27,6 +26,12 @@ var ip = "127.0.0.1";
 var server = http.createServer(req.requestHandler);
 console.log("Listening on http://" + ip + ":" + port);
 server.listen(port, ip);
+
+// server.listen({
+//   address: '127.0.0.1',
+//   port: 3000
+//   //path: '/test'
+// });
 
 // function handleRequest(){
 //   console.log("Something Happenning");
