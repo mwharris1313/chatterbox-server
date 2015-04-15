@@ -71,7 +71,7 @@ module.exports.requestHandler = function(request, response) {
     if (request.url === '/classes/messages') {
 
       if (request.method === 'GET') {
-        console.log('OPTIONS 2 running');
+        console.log('OPTIONS GET running');
 
         statusCode = 200;
         headers = defaultCorsHeaders;
@@ -81,9 +81,10 @@ module.exports.requestHandler = function(request, response) {
         //var resBody = {};
         //resBody.results = [];
 
-        response.end(JSON.stringify(messages));
+        response.end(JSON.stringify(obj));
 
       } else if (request.method === 'POST') {
+        console.log('OPTIONS POST running');
         // statusCode = 201;
         // headers = defaultCorsHeaders;
         // headers['Content-Type'] = "text/json";
@@ -91,6 +92,7 @@ module.exports.requestHandler = function(request, response) {
         // response.end();
         //console.log('allData:', allData);
         obj.results.push(JSON.parse(allData));
+        console.log("allData:", allData);
         //body.results.push(JSON.parse(allData));
         // console.log('body.results:',body.results);
         // console.log('body.results[0].username:',body.results[0].username);
